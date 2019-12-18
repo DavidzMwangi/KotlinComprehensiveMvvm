@@ -11,7 +11,7 @@ import ke.co.neverest.kotlinmvvm.data.models.Authorization
 interface AuthorizationDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(authorization: Authorization)
+     fun insert(authorization: Authorization)
 
 
     @Query("SELECT * FROM authorization_table LIMIT 1")

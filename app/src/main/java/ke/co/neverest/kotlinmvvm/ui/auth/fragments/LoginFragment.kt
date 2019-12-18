@@ -35,7 +35,7 @@ class LoginFragment:Fragment() {
 
         loginFragmentViewModel?.getAuthorization()?.observe(this, Observer {
             if (it!=null){
-                Toast.makeText(activity,"Not Null",Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity,it.access_token,Toast.LENGTH_SHORT).show()
 
             }else{
                 Toast.makeText(activity," Null",Toast.LENGTH_SHORT).show()
@@ -46,6 +46,7 @@ class LoginFragment:Fragment() {
         binding?.loginBtn?.setOnClickListener{
             //login here
 
+            loginFragmentViewModel?.attemptLogin(binding?.username?.text.toString(),binding?.password?.text.toString())
 
         }
     }

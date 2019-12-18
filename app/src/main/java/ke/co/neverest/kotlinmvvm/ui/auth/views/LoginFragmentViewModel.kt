@@ -15,5 +15,9 @@ class LoginFragmentViewModel(application: Application) :AndroidViewModel(applica
         return authorizationRepository.getAuthorization()
     }
 
+    fun attemptLogin(username:String, password:String){
+
+        authorizationRepository.attemptLogin(username, password)
+    }
 
 }
